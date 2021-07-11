@@ -12,10 +12,10 @@ public class Intern {
 	private int internId;
 	private String internFirstName;
 	private String internLastName;
-	private int internMobileNo;
+	private long internMobileNo;
 	private String internProfile;
 	
-	public Intern(int internId,String internFirstName,String internLastName,int internMobileNo,String internProfile ) {
+	public Intern(int internId,String internFirstName,String internLastName,long internMobileNo,String internProfile ) {
 		this.internId=internId;
 		this.internFirstName=internFirstName;
 		this.internLastName=internLastName;
@@ -51,11 +51,11 @@ public class Intern {
 		this.internLastName = internLastName;
 	}
 
-	public int getInternMobileNo() {
+	public long getInternMobileNo() {
 		return internMobileNo;
 	}
 
-	public void setInternMobileNo(int internMobileNo) {
+	public void setInternMobileNo(long internMobileNo) {
 		this.internMobileNo = internMobileNo;
 	}
 
