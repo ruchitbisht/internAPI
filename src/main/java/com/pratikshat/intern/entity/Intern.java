@@ -1,12 +1,16 @@
 package com.pratikshat.intern.entity;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
+import org.aspectj.lang.annotation.RequiredTypes;
+import org.springframework.lang.NonNull;
 
 @Entity
 public class Intern {
@@ -14,10 +18,17 @@ public class Intern {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int internId;
+	@NonNull
+	@Pattern(regexp="^[a-zA-Z]*" )
 	private String internFirstName;
+	@NonNull
+	@NotBlank
 	private String internLastName;
+	@NonNull
 	private long internMobileNo;
+	@NonNull
 	private String internProfile;
+	@NonNull
 	private Timestamp internDOB;
 	
 	public Intern(String internFirstName,String internLastName,long internMobileNo,String internProfile,Timestamp internDOB ) {

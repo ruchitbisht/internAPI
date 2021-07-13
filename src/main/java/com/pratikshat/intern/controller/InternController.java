@@ -39,8 +39,8 @@ public class InternController {
 	
 	@PutMapping("/intern/{id}")
 	public Intern updateIntern(@RequestBody Intern intern,@PathVariable("id") int internId) {
-		this.internServices.updateIntern(intern,internId);
-		return intern;
+		return internServices.updateIntern(intern,internId);
+		
 	}	
 		
 	@DeleteMapping("/intern/{id}")
