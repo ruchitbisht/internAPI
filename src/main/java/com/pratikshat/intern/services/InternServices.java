@@ -10,6 +10,7 @@ import com.pratikshat.intern.repository.InternRepository;
 
 @Component
 public class InternServices {
+	
 	@Autowired
 	private InternRepository internRepository;
 
@@ -24,7 +25,6 @@ public class InternServices {
 	}
 
 	public Intern getIntern(int internId) {
-
 		return internRepository.findById(internId);
 	}
 
