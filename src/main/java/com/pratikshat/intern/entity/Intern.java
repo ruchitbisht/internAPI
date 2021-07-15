@@ -7,16 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
-import org.aspectj.lang.annotation.RequiredTypes;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.lang.NonNull;
 
 @Entity
 public class Intern {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int internId;
 	@NonNull
 	@Pattern(regexp="^[a-zA-Z]*" )
@@ -29,6 +30,7 @@ public class Intern {
 	@NonNull
 	private String internProfile;
 	@NonNull
+	@Past
 	private Timestamp internDOB;
 	
 	public Intern(String internFirstName,String internLastName,long internMobileNo,String internProfile,Timestamp internDOB ) {

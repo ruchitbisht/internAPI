@@ -32,7 +32,7 @@ public class InternController {
 	}
 	
 	@PostMapping("/intern")
-	public Intern postIntern( @RequestBody Intern n) {
+	public Intern postIntern( @RequestBody Intern n) throws Exception {
 		Intern intern=	this.internServices.saveIntern(n);
 		return intern;	
 	}
